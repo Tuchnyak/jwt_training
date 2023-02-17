@@ -1,0 +1,21 @@
+server:
+  port: ${SERVER_PORT:9090}
+
+jwt:
+  secret: ${JWT_SECRET}
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/jwt_security
+    username: ${DB_USER:test}
+    password: ${DB_PASSWORD:test}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
